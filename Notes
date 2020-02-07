@@ -1,0 +1,15 @@
+Spring Framework:
+-It can create objects for you and manage the objects see 01.png using config file
+-All the objects created in a IOC Container and manages it are called the Spring Bean
+-To use the objects in the IOC Container,  we need to use getBean("a"); see 02
+
+IOC Container:
+Two types
+    -Bean Factory - is an Interface  - Is not used much now
+    -Application Context - is also an Interface - It has more advanced features
+
+    So to use Application Context we need a class to call the interface
+    -We have a class named ClassPathXMLApplicationContext
+Create bean.xml file under scr
+    - give the <?xml> line
+    -name the spring bean with the id reference
