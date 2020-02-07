@@ -21,5 +21,16 @@ public class Mobile {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
         System.out.println("Config loaded");
+        /*//One way to call by typecasting
+        Airtel air = (Airtel) context.getBean("airtel");
+        air.calling();
+        air.data();*/
+       /* //Another way
+        Vodafone voda = context.getBean("vodafone",Vodafone.class);
+        voda.calling();
+        voda.data();*/
+       Sim sim = context.getBean("sim",Sim.class);
+       sim.calling();
+       sim.data();
     }
 }

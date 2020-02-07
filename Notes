@@ -1,4 +1,10 @@
 Spring Framework:
+INVERSION OF CONTROL:
+    * Creating object for us
+    * Managing our objects
+    * Helping our app to be configurable
+    * Managing dependencies
+
 -It can create objects for you and manage the objects see 01.png using config file
 -All the objects created in a IOC Container and manages it are called the Spring Bean
 -To use the objects in the IOC Container,  we need to use getBean("a"); see 02
@@ -13,3 +19,15 @@ Two types
 Create bean.xml file under scr
     - give the <?xml> line
     -name the spring bean with the id reference
+//Using Class
+    Bean is created using id ref: airtel for Airtel class
+    -One way
+    Airtel air = (Airtel) contect.getbean("airtel")
+    Using the id ref airtel we are creating an object air for Airtel class
+    Since the context.getbean returns object we are typcasing it with the class (Airtel)
+    -Another way of calling the bean vodafone for Vodafone class
+    Vodafone voda = context.getBean("vodafone",Vodafone.class);
+//Using Interface - this helps to manage our dependencies
+    We can just use interface to call the class methods by enter the class name in bean.xml
+    Sim sim = context.getBean("sim",Sim.class);
+    And the class called in bean.xml is <bean id= "sim" class ="com.learnspringbasic.Vodafone"></bean>
